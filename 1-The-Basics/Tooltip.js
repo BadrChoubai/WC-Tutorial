@@ -4,20 +4,19 @@ class ToolTip extends HTMLElement {
     this._tooltipContainer;
     this._tooltipText = this.getAttribute("tooltip-text");
     this._tooltipType = this.getAttribute("tooltip-type") || "question-circle";
-    console.log(this._tooltipType);
+    this.attachShadow({ mode: "open" });
   }
 
   connectedCallback() {
     const tooltipIcon = document.createElement("i");
     tooltipIcon.classList.add("fa");
     tooltipIcon.classList.add(`fa-${this._tooltipType}`);
-    console.log(tooltipIcon.classList);
 
     tooltipIcon.style.cursor = "pointer";
     tooltipIcon.addEventListener("mouseenter", this._showTooltip.bind(this));
     tooltipIcon.addEventListener("mouseleave", this._hideTooltip.bind(this));
 
-    this.appendChild(tooltipIcon);
+    this.shadowRoot.appendChild(tooltipIcon);
   }
 
   _showTooltip() {
@@ -29,11 +28,11 @@ class ToolTip extends HTMLElement {
     this._tooltipContainer.style.padding = "1em";
     this._tooltipContainer.style.width = "auto";
 
-    this.appendChild(this._tooltipContainer);
+    this.shadowRoot.appendChild(this._tooltipContainer);
   }
 
   _hideTooltip() {
-    this.removeChild(this._tooltipContainer);
+    this.shadowRoot.removeChild(this._tooltipContainer);
   }
 }
 
