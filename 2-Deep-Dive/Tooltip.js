@@ -19,16 +19,9 @@ class ToolTip extends HTMLElement {
           position: absolute;
           z-index: 1;
         }
-        span {
-          font-size: inherit;
-        }
-
-        ::slotted(/* slotted element selector */) {
-          /* These styles will reflect in the Shadow DOM */
-        }
       </style>
       <slot>Default</slot>
-      <span> (?)</span>
+      <span class="icon">?</span>
     `;
   }
 
