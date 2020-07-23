@@ -15,12 +15,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        @supports (font-variation-settings: normal) {
-            html {
-                font-family: 'Inter var', sans-serif;
-            }
-        }
-
         body {
             margin: 0;
             padding: 0;
@@ -32,6 +26,26 @@
             width: 80%;
             margin: auto;
         }
+
+        .highlight {
+            /* These styles will reflect in the light DOM */
+            padding: 0 .4em;
+        }
+
+        .highlight[class*="orange"] {
+            background-color: #ffd6a5;
+        }
+
+        .highlight[class*="yellow"] {
+            background-color: #fdffb6;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
     </style>
 </head>
 
@@ -39,7 +53,7 @@
     <main id="app">
         <h1>
             <wc-tooltip tooltip-text="BAA-D-er">
-                <i>Badr</i>
+                <span class="highlight orange">Badr</span>
             </wc-tooltip>
         </h1>
     </main>
