@@ -5,13 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Component Basics</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="Tooltip.js" type="module"></script>
+
+    <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js"></script> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vanillawc/wc-markdown@latest/themes/prism-okaidia.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@vanillawc/wc-markdown@1.6.3/components/prism-python.min.js"></script>
+    
     <style>
         @import url('https://rsms.me/inter/inter.css');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
         html {
             font-family: 'Inter', sans-serif;
+        }
+
+        code {
+            font-family: "IBM Plex Mono", monospace;
         }
 
         body {
@@ -44,7 +53,6 @@
                 font-family: 'Inter var', sans-serif;
             }
         }
-
     </style>
 </head>
 
@@ -61,6 +69,14 @@
                 <span class="highlight yellow">Web Components</span>
             </wc-tooltip>
         </p>
+
+        <section id="code-problem">
+            <h2>
+                <wc-tooltip tooltip-text="Fizzbuzz: A common coding interview problem.">Fizzbuzz</wc-tooltip>
+            </h2>
+
+            <wc-markdown src="code-snippets/fizzbuzz.md" highlight></wc-markdown>
+        </section>
     </main>
 </body>
 

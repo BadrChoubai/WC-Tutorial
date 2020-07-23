@@ -20,6 +20,7 @@ class ToolTip extends HTMLElement {
           z-index: 1;
         }
       </style>
+
       <slot>Default</slot>
       <span class="icon">?</span>
     `;
