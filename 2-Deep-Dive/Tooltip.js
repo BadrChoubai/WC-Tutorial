@@ -22,6 +22,10 @@ class ToolTip extends HTMLElement {
         span {
           font-size: inherit;
         }
+
+        ::slotted(/* slotted element selector */) {
+          /* These styles will reflect in the Shadow DOM */
+        }
       </style>
       <slot>Default</slot>
       <span> (?)</span>
