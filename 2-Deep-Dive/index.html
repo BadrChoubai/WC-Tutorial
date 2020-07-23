@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component Basics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Tooltip.js" type="module"></script>
+    <script src="Confirmlink.js" type="module"></script>
+    <style>
+        @import url('https://rsms.me/inter/inter.css');
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f3;
+            color: #0a171c;
+        }
+
+        main#app {
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="app">
+        <h1>
+            <wc-tooltip tooltip-text="BAA-D-er">
+                <i>Badr</i>
+            </wc-tooltip>
+        </h1>
+    </main>
+</body>
+
+</html>
