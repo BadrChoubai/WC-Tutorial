@@ -23,6 +23,11 @@ class ToolTip extends HTMLElement {
   _showTooltip() {
     this._tooltipContainer = document.createElement("div");
     this._tooltipContainer.textContent = this._tooltipText;
+    this._tooltipContainer.style.backgroundColor = "#fefefe";
+    this._tooltipContainer.style.boxShadow = "0 .3rem .8rem rgba(0,0,0,.12)";
+    this._tooltipContainer.style.display = "inline";
+    this._tooltipContainer.style.padding = "1em";
+    this._tooltipContainer.style.width = "auto";
 
     this.appendChild(this._tooltipContainer);
   }
