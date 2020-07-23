@@ -14,7 +14,8 @@ class ToolTip extends HTMLElement {
           box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
           display: inline;
           font-size: .6em;
-          padding: .4em;
+          margin-left: 1rem;
+          padding: .8em;
         }
       </style>
       <slot>Default</slot>
