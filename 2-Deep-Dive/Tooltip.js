@@ -13,14 +13,14 @@ class ToolTip extends HTMLElement {
           border-radius: .8rem;
           box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
           display: inline;
-          font-size: .6em;
+          font-size: inherit;
           margin-left: 1rem;
           padding: .8em;
           position: absolute;
-          z-index: 10;
+          z-index: 1;
         }
         span {
-          font-size: .6em;
+          font-size: inherit;
         }
       </style>
       <slot>Default</slot>
