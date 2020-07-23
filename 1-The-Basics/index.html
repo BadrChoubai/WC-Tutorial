@@ -7,6 +7,7 @@
     <title>Web Component Basics</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="Tooltip.js" type="module"></script>
+    <script src="Confirmlink.js" type="module"></script>
     <style>
         @import url('https://rsms.me/inter/inter.css');
 
@@ -34,12 +35,17 @@
         <wc-tooltip tooltip-text="Web Components is a set of standards.">
             Web Components
         </wc-tooltip>
+        are awesome.
     </h1>
     <h2>
         <wc-tooltip tooltip-text="BAA-D-er">
             <i>Badr</i>
         </wc-tooltip>
     </h2>
+
+    <a 
+        is="wc-a-confirmation"
+        href="https://www.badrchoubai.dev">My Personal Website</a>
 </body>
 
 </html>

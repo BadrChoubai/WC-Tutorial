@@ -16,6 +16,11 @@ class ToolTip extends HTMLElement {
           font-size: .6em;
           margin-left: 1rem;
           padding: .8em;
+          position: absolute;
+          z-index: 10;
+        }
+        span {
+          font-size: .6em;
         }
       </style>
       <slot>Default</slot>
