@@ -1,6 +1,10 @@
 const template = document.createElement("template");
 
 class ToolTip extends HTMLElement {
+  static get observedAttributes() {
+    return ["tooltip-text"];
+  }
+
   constructor() {
     super();
     this._tooltipContainer;
@@ -26,6 +30,16 @@ class ToolTip extends HTMLElement {
     `;
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue === newValue) {
+      return;
+    }
+
+    if (name === "tooltip-text") {
+      this._tooltipText = newValue;
+    }
+  }
+
   connectedCallback() {
     if (this.hasAttribute("tooltip-text")) {
       this._tooltipText = this.getAttribute("tooltip-text");
@@ -35,7 +49,6 @@ class ToolTip extends HTMLElement {
     tooltipIcon.style.cursor = "pointer";
     tooltipIcon.addEventListener("mouseenter", this._showTooltip.bind(this));
     tooltipIcon.addEventListener("mouseleave", this._hideTooltip.bind(this));
-
     this.shadowRoot.appendChild(tooltipIcon);
   }
 
