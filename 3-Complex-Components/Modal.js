@@ -10,6 +10,8 @@ class Modal extends HTMLElement {
           position: absolute;
           left: 50%;
           margin-left: -400px;
+          opacity: 0;
+          pointer-events: none;
           width: 800px;
           z-index: 10;
         }
@@ -23,6 +25,8 @@ class Modal extends HTMLElement {
           left: 50%;
           margin-left: -300px;
           margin-top: 2rem;
+          opacity: 0;
+          pointer-events: none;
           position: fixed;
           width: 600px;
           z-index: 100;
@@ -53,9 +57,15 @@ class Modal extends HTMLElement {
         #modal > #main {
           color: #fefefe; 
           padding: 0 2rem;
+          margin-bottom: 2rem;
           text-shadow: 0 .1em 3px #333;
         }
 
+        :host([opened]) #backdrop,
+        :host([opened]) #modal {
+          opacity: 1;
+          pointer-events: all;
+        }
       </style>
       <div id="backdrop"></div>
       <div id="modal">
@@ -71,6 +81,10 @@ class Modal extends HTMLElement {
         </section>
       </div>
     `;
+  }
+
+  open() {
+    this.setAttribute("opened", "");
   }
 }
 
