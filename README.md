@@ -17,3 +17,11 @@ Web Components are a set of standard web APIs that allow you to create reusable 
   - Defines how to declare fragments of markup that go unused at page load, but can be instantiated later on at runtime
 - ES Modules [(HTML Living Standars)](https://html.spec.whatwg.org/multipage/webappapis.html#integration-with-the-javascript-module-system)
   - Defines the inclusion and reuse of JS documents in a standards based, modular, performant way
+
+### Resources I Used for Learning
+
+- [Academind: Web Components & Custom HTML Elements](https://www.youtube.com/watch?v=R6dxh-vnaJw) :money_with_wings:
+  - If you are a Denver Public Library cardholder you can get access to [Udemy for free](https://www.denverlibrary.org/udemy)
+- [Traversy Media: Web Components Crash Course](https://www.youtube.com/watch?v=PCWaFLy3VUo)
+- [https://www.webcomponents.org](https://www.webcomponents.org/introduction)
+- [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
