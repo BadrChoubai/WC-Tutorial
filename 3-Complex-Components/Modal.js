@@ -6,13 +6,14 @@ class Modal extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         #backdrop {
-          height: 400px;
+          background: rgba(0, 0, 0, 0.13);
+          height: 100vh;
           position: absolute;
-          left: 50%;
-          margin-left: -400px;
+          top: 0;
+          left: 0;
           opacity: 0;
           pointer-events: none;
-          width: 800px;
+          width: 100vw;
           z-index: 10;
         }
 
@@ -25,10 +26,10 @@ class Modal extends HTMLElement {
           justify-content: space-between;
           left: 50%;
           margin-left: -300px;
-          margin-top: 2rem;
           opacity: 0;
           pointer-events: none;
           position: fixed;
+          top: 0vh;
           width: 600px;
           z-index: 100;
 
@@ -36,6 +37,7 @@ class Modal extends HTMLElement {
           -moz-box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
           box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
           
+          transition: all ease-in-out 300ms;
         }
 
         #modal > header {
@@ -77,6 +79,10 @@ class Modal extends HTMLElement {
           opacity: 1;
           pointer-events: all;
         }
+
+        :host([opened]) #modal {
+          top: 15vh;
+        }
       </style>
 
       <div id="backdrop"></div>
@@ -96,7 +102,9 @@ class Modal extends HTMLElement {
 
     const cancelButton = this.shadowRoot.querySelector("#cancel-button");
     const confirmButton = this.shadowRoot.querySelector("#confirm-button");
+    const backdrop = this.shadowRoot.querySelector("#backdrop");
 
+    backdrop.addEventListener("click", this._cancel.bind(this));
     cancelButton.addEventListener("click", this._cancel.bind(this));
     confirmButton.addEventListener("click", this._confirm.bind(this));
   }
