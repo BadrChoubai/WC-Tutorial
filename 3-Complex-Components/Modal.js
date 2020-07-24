@@ -68,13 +68,14 @@ class Modal extends HTMLElement {
           pointer-events: all;
         }
       </style>
+
       <div id="backdrop"></div>
       <div id="modal">
         <header>
-          <h1>Please Confirm</h1>
+         <slot name="header"></slot>
         </header>
         <section id="main">
-          <slot></slot>
+          <slot name="message"></slot>
         </section>
         <section id="actions">
           <button>Cancel</button>
