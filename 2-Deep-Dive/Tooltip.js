@@ -21,8 +21,12 @@ class ToolTip extends HTMLElement {
           font-size: inherit;
           margin-left: 1rem;
           padding: .8em;
-          position: absolute;
+          position: inherit;
           z-index: 1;
+        }
+
+        :host {
+          position: relative;
         }
       </style>
 
