@@ -69,6 +69,8 @@
         <wc-modal>
             <h1 slot="header">Are Web Components Useful?</h1>
             <p slot="message">Web Components are awesome!</p>
+            <button slot="cancel-button">No</button>
+            <button slot="confirm-button">Yes</button>
         </wc-modal>
 
         <button id="confirm-button">Show Details and Confirm</button>
@@ -78,10 +80,12 @@
             
             modalComponent.addEventListener('confirm', (event) => {
                 event.preventDefault();
+                console.log('Confirm Event Listener')
             });
             
             modalComponent.addEventListener('cancel', (event) => {
                 event.preventDefault();
+                console.log('Cancel Event Listener');
             });
 
             confirmButton.addEventListener('click', () => {

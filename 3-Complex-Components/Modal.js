@@ -49,9 +49,22 @@ class Modal extends HTMLElement {
           justify-content: flex-end;
         }
 
-        #actions > button {
-          margin: 1rem .8rem;
+        #actions > ::slotted(button) {
+          border: none;
+          border-radius: .2em;
+          color: #fff;
+          font-size: 1em;
           cursor: pointer;
+          margin: 1rem .8rem;
+          padding: .4em 1.6em;
+        }
+
+        #actions ::slotted(button[slot="cancel-button"]) {
+          background: #ed3b3b;
+        }
+        
+        #actions ::slotted(button[slot="confirm-button"]) {
+          background: #34a853;
         }
 
         #modal > #main {
@@ -75,8 +88,8 @@ class Modal extends HTMLElement {
           <slot name="message"></slot>
         </section>
         <section id="actions">
-          <button id="cancel-button">Cancel</button>
-          <button id="confirm-button">Confirm</button>
+          <slot name="cancel-button" id="cancel-button">Cancel</slot>
+          <slot name="confirm-button" id="confirm-button">Confirm</slot>
         </section>
       </div>
     `;
@@ -108,12 +121,19 @@ class Modal extends HTMLElement {
     this.isOpen = false;
   }
 
-  _cancel() {
+  _cancel(event) {
     this.hide();
+    const cancelEvent = new Event("cancel", { bubbles: true, composed: true });
+    event.target.dispatchEvent(cancelEvent);
   }
 
-  _confirm() {
+  _confirm(event) {
     this.hide();
+    const confirmEvent = new Event("confirm", {
+      bubbles: true,
+      composed: true,
+    });
+    event.target.dispatchEvent(confirmEvent);
   }
 }
 
