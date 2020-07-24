@@ -75,6 +75,15 @@
         <script>
             const confirmButton = document.querySelector('#confirm-button');
             const modalComponent = document.querySelector('wc-modal');
+            
+            modalComponent.addEventListener('confirm', (event) => {
+                event.preventDefault();
+            });
+            
+            modalComponent.addEventListener('cancel', (event) => {
+                event.preventDefault();
+            });
+
             confirmButton.addEventListener('click', () => {
                 if (!modalComponent.isOpen) {
                     modalComponent.open();
