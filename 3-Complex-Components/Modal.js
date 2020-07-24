@@ -6,7 +6,6 @@ class Modal extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         #backdrop {
-          background: rgba(0, 0, 0, 0.72);
           height: 400px;
           position: absolute;
           left: 50%;
@@ -18,7 +17,8 @@ class Modal extends HTMLElement {
         }
 
         #modal {
-          background: salmon;
+          background: #fefdfb;
+          color: #0a171c;
           border-radius: 1rem;
           display: flex;
           flex-direction: column;
@@ -32,19 +32,18 @@ class Modal extends HTMLElement {
           width: 600px;
           z-index: 100;
 
-          -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.75);
-          -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.75);
-          box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.75);
+          -webkit-box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
+          -moz-box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
+          box-shadow: 0 .3rem .8rem rgba(0,0,0,.12);
+          
         }
 
         #modal > header {
-          color: #fefefe;
-          text-shadow: 1px 1px 1px #333;
+          border-bottom: .2rem solid rgba(88,93,96,0.05);
           padding-left: 1rem;
         }
 
         #actions {
-          border-top: solid 1px #333;
           display: flex;
           align-items: center;
           justify-content: flex-end;
@@ -56,10 +55,8 @@ class Modal extends HTMLElement {
         }
 
         #modal > #main {
-          color: #fefefe; 
           padding: 0 2rem;
           margin-bottom: 2rem;
-          text-shadow: 0 .1em 3px #333;
         }
 
         :host([opened]) #backdrop,
