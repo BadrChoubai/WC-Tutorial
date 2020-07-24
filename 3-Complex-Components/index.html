@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Components - Adding More Complexity</title>
+    <script type="module" src="Modal.js"></script>
     
     <style>
         @import url('https://rsms.me/inter/inter.css');
+
+        * {
+            box-sizing: border-box;
+        }
 
         html {
             font-family: 'Inter', sans-serif;
@@ -53,8 +58,11 @@
 <body>
     <main id="app">
         <h1>
-            Web Components - Complex Components 
+            Web Components - <span class="highlight orange">Complex Components</span>
         </h1>
+
+
+        <wc-modal></wc-modal>
     </main>
 </body>
 
