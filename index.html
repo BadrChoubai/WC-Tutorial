@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Component Basics</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="Tooltip.js" type="module"></script>
-    <script src="Confirmlink.js" type="module"></script>
+    <title>Web Components Tutorial</title>
+
     <style>
         @import url('https://rsms.me/inter/inter.css');
 
@@ -62,19 +60,18 @@
 
 <body>
     <main id="app">
-        <h1>
-            <wc-tooltip tooltip-text="Web Components is a set of standards.">
-                Web Components
-            </wc-tooltip>
-            are awesome.
-        </h1>
-        <h2>
-            <wc-tooltip tooltip-text="BAA-D-er">
-                <i>Badr</i>
-            </wc-tooltip>
-        </h2>
+        <h1>Web Components Tutorial</h1>
+        <p>
+            Below are links to each lesson's source code.
+        </p>
 
-        <a is="wc-a-confirmation" href="https://www.badrchoubai.dev">My Personal Website</a>
+        <nav>
+            <ul>
+                <li><a href="./1-The-Basics/index.html">The Basics</a></li>
+                <li><a href="./2-Deep-Dive/index.html">Deep Dive</a></li>
+                <li><a href="./3-Complex-Components/index.html">Complex Components</a></li>
+            </ul>
+        </nav>
     </main>
 </body>
 
