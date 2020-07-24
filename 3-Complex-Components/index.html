@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components - Adding More Complexity</title>
+    
+    <style>
+        @import url('https://rsms.me/inter/inter.css');
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code {
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f3;
+            color: #0a171c;
+        }
+
+        main#app {
+            width: 80%;
+            margin: auto;
+        }
+
+        .highlight {
+            /* These styles will reflect in the light DOM */
+            padding: 0 .4em;
+        }
+
+        .highlight[class*="orange"] {
+            background-color: #ffd6a5;
+        }
+
+        .highlight[class*="yellow"] {
+            background-color: #fdffb6;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="app">
+        <h1>
+            Web Components - Complex Components 
+        </h1>
+    </main>
+</body>
+
+</html>
